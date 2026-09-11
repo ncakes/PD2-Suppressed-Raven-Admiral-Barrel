@@ -1,4 +1,4 @@
-Hooks:PostHook(GenericDLCManager, "init_finalize", "srab_post_GenericDLCManager_init_finalize", function(self, ...)
+Hooks:PostHook(GenericDLCManager, "init_finalize", "SupAdmBar-PostHook-GenericDLCManager:init_finalize", function(self, ...)
 	--If using AOLA, override based-on parts to reduce concealment sync issues
 	if _G.AOLA then
 		--Check that DLC is unlocked, because setting based-on for a DLC part you don't own will cause a cheater tag

@@ -1,15 +1,21 @@
---For OSA / SDSS
-_G.SuppressedRavenAdmiralBarrel = {}
+--PostHook last function in init, make sure that all attachments and whatnot have been set up.
+Hooks:PostHook(WeaponFactoryTweakData, "_set_inaccessibles", "SupAdmBar-PostHook-WeaponFactoryTweakData:_set_inaccessibles", function(self)
+	--Safely add a value to the table of a part_id. Creates the table if it does not exist.
+	--Does nothing if value==part_id or if the value is already in the table.
+	local function wftd_safe_add_value(part_id, table_name, value)
+		if value ~= part_id and self.parts[part_id] then
+			self.parts[part_id][table_name] = self.parts[part_id][table_name] or {}
+			if not table.contains(self.parts[part_id][table_name], value) then
+				table.insert(self.parts[part_id][table_name], value)
+			end
+		end
+	end
 
-Hooks:PostHook(WeaponFactoryTweakData, "init", "srab_post_WeaponFactoryTweakData_init", function(self)
-	--Dragon's Breath rounds block suppressors
-	table.insert(self.parts.wpn_fps_upg_a_dragons_breath.forbids, "wpn_fps_sho_ksg_b_legendary")
-end)
+	--New localization by OSA/AOLA
+	self.parts.wpn_fps_sho_ksg_b_legendary.legend_part_name_type = "barrel_sup"
 
---PreHook last function in init, make sure that all attachments and whatnot have been set up.
-Hooks:PreHook(WeaponFactoryTweakData, "_set_inaccessibles", "srab_pre_WeaponFactoryTweakData__set_inaccessibles", function(self)
 	--Combined stats of Short Barrel and Silent Killer Suppressor
-	--Works out perfectly because the Optical Illusions bug will give the same bonus that you get on a real suppressed Raven
+	--Optical Illusions bug will give the same bonus that you get on a real suppressed Raven
 	self.parts.wpn_fps_sho_ksg_b_legendary.stats = {
 		value = 1,
 		alert_size = 12,
@@ -23,20 +29,18 @@ Hooks:PreHook(WeaponFactoryTweakData, "_set_inaccessibles", "srab_pre_WeaponFact
 	}
 
 	--Add "silencer" perk, "gadget" perk is not overwritten
-	self.parts.wpn_fps_sho_ksg_b_legendary.perks = self.parts.wpn_fps_sho_ksg_b_legendary.perks or {}
-	table.insert(self.parts.wpn_fps_sho_ksg_b_legendary.perks, "silencer")
+	wftd_safe_add_value("wpn_fps_sho_ksg_b_legendary", "perks", "silencer")
 
 	--Suppressed fire sound, clone Silent Killer Suppressor
 	self.parts.wpn_fps_sho_ksg_b_legendary.sound_switch = deep_clone(self.parts.wpn_fps_upg_ns_shot_thick.sound_switch)
 
 	--Block all barrel extensions
-	self.parts.wpn_fps_sho_ksg_b_legendary.forbids = self.parts.wpn_fps_sho_ksg_b_legendary.forbids or {}
 	for _, part_id in pairs(self.wpn_fps_sho_ksg.uses_parts) do
-		if part_id ~= "wpn_fps_sho_ksg_b_legendary" and self.parts[part_id] and self.parts[part_id].type == "barrel_ext" then
-			table.insert(self.parts.wpn_fps_sho_ksg_b_legendary.forbids, part_id)
+		if self.parts[part_id] and self.parts[part_id].type == "barrel_ext" then
+			wftd_safe_add_value("wpn_fps_sho_ksg_b_legendary", "forbids", part_id)
 		end
 	end
 
 	--Block Dragon's Breath
-	table.insert(self.parts.wpn_fps_sho_ksg_b_legendary.forbids, "wpn_fps_upg_a_dragons_breath")
+	wftd_safe_add_value("wpn_fps_sho_ksg_b_legendary", "forbids", "wpn_fps_upg_a_dragons_breath")
 end)

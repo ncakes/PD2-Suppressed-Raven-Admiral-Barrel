@@ -9,8 +9,8 @@ This mod turns the Raven Admiral's legendary barrel into a silencer. It does not
 Key features and options:
 
 - **Silencer Effect for Raven Admiral Barrel:** The Raven Admiral's legendary barrel now has a silencer effect, allowing you to use it in stealth without equipping a suppressor and destroying the look of the gun. As with all silencers, Dragon's Breath rounds are not allowed.
-- **OSA/SDSS Integration:** Both [Optional Skin Attachments](https://github.com/ncakes/PD2-Optional-Skin-Attachments) and [Super Duper Skin Swapper](https://github.com/ncakes/PD2-Super-Duper-Skin-Swapper) have the option to display legendary weapon mods in the weapon modification menu. If you are using the Suppressed Raven Admiral Barrel mod, the name of the legendary barrel will be changed to "Admiral Suppressed Barrel".
-- **AOLA Compatible**: If you use the [Add-On Legendary Attachments](https://github.com/ncakes/PD2-Add-On-Legendary-Attachments) mod, the stats of the add-on attachments will also be changed.
+- **OSA Integration:** [Optional Skin Attachments](https://github.com/ncakes/PD2-Optional-Skin-Attachments) has the option to display legendary weapon mods in the weapon modification menu. If you are using the Suppressed Raven Admiral Barrel mod, the name of the legendary barrel will be changed to "Admiral Suppressed Barrel".
+- **AOLA Compatible**: If you use the [Add-On Legendary Attachments](https://github.com/ncakes/PD2-Add-On-Legendary-Attachments) mod, the stats of the add-on attachment will also be changed.
 
 ## IMPORTANT: Client Detection Risk
 

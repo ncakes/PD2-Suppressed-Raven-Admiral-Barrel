@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.2
+
+*2026-09-11 - Update 247.3*
+
+- Compatibility with OSA v5.0 / AOLA v2.0.
+
 ## v1.1
 
 *2021-04-11 - Update 205*
