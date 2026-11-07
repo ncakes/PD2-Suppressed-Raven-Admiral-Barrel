@@ -1,3 +1,7 @@
+# DISCONTINUED
+
+This mod has been superseded by [Legendary Stat Customizer](https://github.com/ncakes/PD2-Legendary-Stat-Customizer).
+
 # Suppressed Raven Admiral Barrel
 
 ## Overview
