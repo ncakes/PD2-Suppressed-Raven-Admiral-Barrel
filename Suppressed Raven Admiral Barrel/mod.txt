@@ -3,7 +3,7 @@
 	"description": "Turns the Raven Admiral's legendary barrel into a suppressor.",
 	"author": "github.com/ncakes",
 	"contact": "github.com/ncakes/PD2-Suppressed-Raven-Admiral-Barrel",
-	"version": "1.2",
+	"version": "1.2.1",
 	"priority": 1,
 	"blt_version": 2,
 	"hooks": [

@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.2.1
+
+*2026-11-07 - Update 248.2*
+
+- Mod is automatically disabled if Legendary Stat Customizer is detected.
+
 ## v1.2
 
 *2026-09-11 - Update 247.3*

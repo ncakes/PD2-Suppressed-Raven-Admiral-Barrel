@@ -1,3 +1,11 @@
+_G[ModPath] = _G[ModPath] or {}
+if _G[ModPath][RequiredScript] then return end
+_G[ModPath][RequiredScript] = true
+
+if _G.LegendStats then
+	return
+end
+
 Hooks:PostHook(GenericDLCManager, "init_finalize", "SupAdmBar-PostHook-GenericDLCManager:init_finalize", function(self, ...)
 	--If using AOLA, override based-on parts to reduce concealment sync issues
 	if _G.AOLA then

@@ -1,3 +1,11 @@
+_G[ModPath] = _G[ModPath] or {}
+if _G[ModPath][RequiredScript] then return end
+_G[ModPath][RequiredScript] = true
+
+if _G.LegendStats then
+	return
+end
+
 --PostHook last function in init, make sure that all attachments and whatnot have been set up.
 Hooks:PostHook(WeaponFactoryTweakData, "_set_inaccessibles", "SupAdmBar-PostHook-WeaponFactoryTweakData:_set_inaccessibles", function(self)
 	--Safely add a value to the table of a part_id. Creates the table if it does not exist.
